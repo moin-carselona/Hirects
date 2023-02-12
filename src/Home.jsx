@@ -37,13 +37,7 @@ const Home = () => {
   return (
     <div  className="d-flex flex-column">
       {
-        internetStatus === "offline" ?
-          <div className='text-center centers' >
-            {/* <KTCardBody className='card py-4'> */}
-              <StatusOnlineOffline Title="your internet is disconneted" />
-            {/* </KTCardBody> */}
-          </div>
-          : internetStatus === "online" ?
+       
             < >
               {/* Job Container +++++++++++++++++++++++++++++ */}
                 {
@@ -102,7 +96,7 @@ const Home = () => {
               </div>
               {/* footer +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
             </>
-            : ""
+            
       }
     </div>
   )
