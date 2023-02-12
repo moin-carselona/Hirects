@@ -30,17 +30,17 @@ const Home = () => {
     detectInternet();
   });
   function detectInternet() {
+    setshow(true)
     if (navigator.onLine) {
-      setinternetStatus("Your are back online")
+      setinternetStatus("Your are Now back online ")
       setTimeout(() => {
         sethide(false)
         setshow(false)
-      }, 2000)
+      }, 1000)
     } else {
       setshow(true)
       setinternetStatus("Your Internet is disconnected")
       sethide(true)
-
     }
   }
   const closeBtn = () => {

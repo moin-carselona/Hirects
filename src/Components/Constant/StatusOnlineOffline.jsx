@@ -6,7 +6,7 @@ const StatusOnlineOffline = ({ show,closeBtn, Title, color }) => {
             {show ? <Modal show={show} onHide={closeBtn}>
                 <Modal.Header >
                     <Modal.Title>
-                        <div className={`card bg-${color} px-2 text-white fs-8`}> <div className='spinner-borde' role="status"></div> {Title}</div>
+                        <div className={`card bg-${color} px-2 text-white fs-8 text-center`}> <div className='spinner-borde' role="status"></div> {Title}</div>
                     </Modal.Title>
                 </Modal.Header>
             </Modal>
