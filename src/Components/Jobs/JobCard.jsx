@@ -4,7 +4,7 @@ const JobCard = () => {
         <div className='border  d-flex flex-column mb-2  ' style={{ height: "185px", width: "100%" }}>
             <div className='d-flex justify-content-between px-2 pb-2'>
                 <span className='fs-6 fw-bold text-dark'>React Devloper</span>
-                <span className='text-primary fw-bold fs-6 fw-1000'>Rs 10-11 LPA</span>
+                <span className='text-success fw-bold fs-6 fw-1000'>Rs 10-11 LPA</span>
             </div>
             <div className='d-flex   px-2 pb-2'>
                 <span className={`cursor-pointer  text-dark border px-2 pb-1 ms-2 text-muted`} >
@@ -27,8 +27,8 @@ const JobCard = () => {
             </div>
             <div className='d-flex  justify-content-end px-2 pb-1 '>
                 <span className={`  text-black ms-2 border px-1 `} >
-                    <i className="bi bi-house text-primary"></i>
-                    <span className='ms-1 text-primary'>Remote</span>
+                    <i className="bi bi-house text-success"></i>
+                    <span className='ms-1 text-success'>Remote</span>
                 </span>
             </div>
             <div className='d-flex  justify-content-between px-2 pb-1 '>

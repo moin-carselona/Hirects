@@ -28,7 +28,7 @@ const JobNavbar = () => {
         {
           NavJobData?.map((jobnavElement, index) => {
             return (
-              <div className={`badge text-${currentTopic == index || currentTopic == null && index == 0 ? "primary" : "black"}  me-lg-1 mb-1 text-${currentTopic == index || currentTopic == null && index == 0 ? "fw-bolder fs-7" : "muted"}`} key={uuid()} onClick={() => CheckCurrentTopicSelected(index)} style={{ cursor: 'pointer' }} >
+              <div className={`badge text-${currentTopic == index || currentTopic == null && index == 0 ? "success" : "black"}  me-lg-1 mb-1 text-${currentTopic == index || currentTopic == null && index == 0 ? "fw-bolder fs-7" : "muted"}`} key={uuid()} onClick={() => CheckCurrentTopicSelected(index)} style={{ cursor: 'pointer' }} >
                 {jobnavElement}
               </div>
             )

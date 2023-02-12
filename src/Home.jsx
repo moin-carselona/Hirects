@@ -37,15 +37,11 @@ const Home = () => {
   return (
     <div className="d-flex flex-column">
       {
-        internetStatus === "offline" &&
-        <div className='text-center centers' >
-          {/* <KTCardBody className='card py-4'> */}
-          <StatusOnlineOffline Title="your internet is disconneted" />
-          {/* </KTCardBody> */}
-        </div>
+        // <div className='text-center centers' >
+        //   <StatusOnlineOffline Title="your internet is disconneted" />
+        // </div>
       }
       {
-        internetStatus === "online" &&
         < >
           {/* Job Container +++++++++++++++++++++++++++++ */}
           {
@@ -69,10 +65,6 @@ const Home = () => {
                   <></>
           }
           {/* Job Container +++++++++++++++++++++++++++++ */}
-          {/* ++++++++++++++++++++++++++++++++++++++++++++++++++
-  ++++++++++++++++++++++++++++++++++++++++++++++++++
-  ++++++++++++++++++++++++++++++++++++++++++++++++++
-  ++++++++++++++++++++++++++++++++++++++++++++++++++ */}
           {/* body is here now  Container +++++++++++++++++++++++++++++ */}
           <div style={{ width: "100%", overflow: "auto", overflowY: "hidden", scrollBehavior: 'smooth' }} className="p-2 pt-3  container-fluid p-0 example mt-5">
             {
@@ -93,13 +85,9 @@ const Home = () => {
             }
           </div>
           {/* body is here now  Container +++++++++++++++++++++++++++++ */}
-          {/* ++++++++++++++++++++++++++++++++++++++++++++++++++
-  ++++++++++++++++++++++++++++++++++++++++++++++++++
-  ++++++++++++++++++++++++++++++++++++++++++++++++++
-  ++++++++++++++++++++++++++++++++++++++++++++++++++ */}
           {/* footer +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
           <div style={{ width: "100%", position: "fixed", bottom: "0px", height: "60px" }} className="bg-white">
-            <Footer currnetBottomOption={currnetBottomOption} currentNottonOpt={currentNottonOpt} classes="primary"></Footer>
+            <Footer currnetBottomOption={currnetBottomOption} currentNottonOpt={currentNottonOpt} classes="success"></Footer>
           </div>
           {/* footer +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
         </>

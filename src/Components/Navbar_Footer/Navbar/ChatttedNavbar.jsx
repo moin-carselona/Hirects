@@ -9,7 +9,7 @@ const ChatttedNavbar = () => {
   }
   return (
     <div className='d-flex justify-content-start align-items-center ' style={{ width: "99%", height: "50px" }}  >
-    <p className='ms-4 text-primary'>Chat</p>
+    <p className='ms-4 text-success'>Chat</p>
     <p className='ms-2'>Interaction</p>
     </div>
   )
