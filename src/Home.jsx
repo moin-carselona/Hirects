@@ -12,6 +12,7 @@ import "./Home.css"
 const Home = () => {
   const [currentNottonOpt, setcurrentNottonOpt] = useState(null)
   const [hide, sethide] = useState(false)
+  const [show, setshow] = useState(false)
   const [internetStatus, setinternetStatus] = useState("connected")
   const Botto_Option_Selected = useSelector((store) => store.FooterReducer.Botto_Option)
   const dispatch = useDispatch()
@@ -30,22 +31,26 @@ const Home = () => {
   });
   function detectInternet() {
     if (navigator.onLine) {
-      setinternetStatus("connected")
-    setTimeout(()=>{
-      sethide(false)
-    }, 2000)
+      setinternetStatus("Your are back online")
+      setTimeout(() => {
+        sethide(false)
+        setshow(false)
+      }, 2000)
     } else {
-      setinternetStatus("disconneted")
+      setshow(true)
+      setinternetStatus("Your Internet is disconnected")
       sethide(true)
+
     }
-   
+  }
+  const closeBtn = () => {
+    setshow(false)
   }
   return (
     <div className="d-flex flex-column">
       {
-        hide && <span className={`text-center centers `} >
-          <StatusOnlineOffline Title={`your internet is  ${internetStatus}`} color={internetStatus == "connected" ? "success" : "danger"} />
-        </span>
+        hide &&
+        <StatusOnlineOffline Title={internetStatus} closeBtn={closeBtn} show={show} color={internetStatus == "Your are back online" ? "success" : "danger"} ></StatusOnlineOffline>
       }
       {
         < >

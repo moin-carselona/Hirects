@@ -34,20 +34,22 @@ const JobNavbar = () => {
             )
           })
         }
+
       </div>
+
       <div className="d-flex  p-1 w-25 d-flex align-items-center justify-content-center ">
         <span className='p-2'><i className="bi bi-plus fs-5 " onClick={() => ToggleMenu("JobPrefernce")}></i></span>
         <span> <i className="bi bi-search mt-2 " onClick={() => ToggleMenu("JobSearch")}></i></span>
       </div>
       <Models show={toggleModal} handleClose={closeModel} currentComponents={currentComponents}> </Models>
 
-      
+
     </>
   )
 }
 export default JobNavbar
 function Models({ show, handleClose, currentComponents }) {
-  return <div>
+  return <div className='bg-primary'>
     {show ? <Modal show={show} onHide={handleClose}>
       {/* <Modal.Header closeButton>
         <Modal.Title>Update P2P</Modal.Title>

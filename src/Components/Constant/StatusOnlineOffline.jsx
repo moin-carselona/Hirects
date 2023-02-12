@@ -1,11 +1,18 @@
 import React from 'react'
-
-const StatusOnlineOffline = ( {Title, color}) => {
+import { Modal } from 'react-bootstrap'
+const StatusOnlineOffline = ({ show,closeBtn, Title, color }) => {
     return (
-        <div className='d-flex align-items-center justify-content-center h-75 flex-column'>
-            <div className={`fw-bold bg-${color} text-${color === "danger" ? "white" : "black"} w-100`}>{Title}</div>
+        <div className='bg-primary'>
+            {show ? <Modal show={show} onHide={closeBtn}>
+                <Modal.Header >
+                    <Modal.Title>
+                        <div className={`card bg-${color} px-2 text-white fs-8`}> <div className='spinner-borde' role="status"></div> {Title}</div>
+                    </Modal.Title>
+                </Modal.Header>
+            </Modal>
+                : ''
+            }
         </div>
     )
 }
-
 export default StatusOnlineOffline
