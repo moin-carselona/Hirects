@@ -35,68 +35,74 @@ const Home = () => {
     }
   }
   return (
-    <div  className="d-flex flex-column">
+    <div className="d-flex flex-column">
       {
-       
-            < >
-              {/* Job Container +++++++++++++++++++++++++++++ */}
-                {
-                  Botto_Option_Selected === "job" ?
-                    <div className='bg-white mb-4' style={{ width: "100%", height: "50px", position: "fixed" }}>
+        internetStatus === "offline" &&
+        <div className='text-center centers' >
+          {/* <KTCardBody className='card py-4'> */}
+          <StatusOnlineOffline Title="your internet is disconneted" />
+          {/* </KTCardBody> */}
+        </div>
+      }
+      {
+        internetStatus === "online" &&
+        < >
+          {/* Job Container +++++++++++++++++++++++++++++ */}
+          {
+            Botto_Option_Selected === "job" ?
+              <div className='bg-white mb-4' style={{ width: "100%", height: "50px", position: "fixed" }}>
+                <Navbar></Navbar>
+              </div>
+              :
+              Botto_Option_Selected === "message" ?
+                <div className='bg-white ' style={{ width: "100%", height: "50px", position: "fixed" }}>
+                  <ChatttedNavbar></ChatttedNavbar>
+                </div>
+                :
+                Botto_Option_Selected === "me" ?
+                  <>
+                    <div className='bg-white ' style={{ width: "100%", height: "50px", position: "fixed" }}>
                       <Navbar></Navbar>
                     </div>
+                  </>
+                  :
+                  <></>
+          }
+          {/* Job Container +++++++++++++++++++++++++++++ */}
+          {/* ++++++++++++++++++++++++++++++++++++++++++++++++++
+  ++++++++++++++++++++++++++++++++++++++++++++++++++
+  ++++++++++++++++++++++++++++++++++++++++++++++++++
+  ++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+          {/* body is here now  Container +++++++++++++++++++++++++++++ */}
+          <div style={{ width: "100%", overflow: "auto", overflowY: "hidden", scrollBehavior: 'smooth' }} className="p-2 pt-3  container-fluid p-0 example mt-5">
+            {
+              Botto_Option_Selected === "job" ?
+                <Jobs></Jobs>
+                :
+                Botto_Option_Selected === "message" ?
+                  <>
+                    <Messages></Messages>
+                  </>
+                  :
+                  Botto_Option_Selected === "me" ?
+                    <>
+                      <Me></Me>
+                    </>
                     :
-                    Botto_Option_Selected === "message" ?
-                        <div className='bg-white ' style={{ width: "100%", height: "50px", position: "fixed" }}>
-                          <ChatttedNavbar></ChatttedNavbar>
-                        </div>
-                      :
-                      Botto_Option_Selected === "me" ?
-                        <>
-                          <div className='bg-white ' style={{ width: "100%", height: "50px", position: "fixed" }}>
-                            <Navbar></Navbar>
-                          </div>
-                        </>
-                        :
-                        <></>
-                }
-
-              {/* Job Container +++++++++++++++++++++++++++++ */}
-              {/* ++++++++++++++++++++++++++++++++++++++++++++++++++
-              ++++++++++++++++++++++++++++++++++++++++++++++++++
-              ++++++++++++++++++++++++++++++++++++++++++++++++++
-              ++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-              {/* body is here now  Container +++++++++++++++++++++++++++++ */}
-              <div style={{ width: "100%", overflow: "auto",  overflowY: "hidden", scrollBehavior: 'smooth' }} className="p-2 pt-3  container-fluid p-0 example mt-5">
-                  {
-                    Botto_Option_Selected === "job" ?
-                      <Jobs></Jobs> 
-                      :
-                      Botto_Option_Selected === "message" ?
-                        <>
-                          <Messages></Messages>
-                        </>
-                        :
-                        Botto_Option_Selected === "me" ?
-                          <>
-                            <Me></Me>
-                          </>
-                          :
-                          <></>
-                  }
-              </div>
-              {/* body is here now  Container +++++++++++++++++++++++++++++ */}
-              {/* ++++++++++++++++++++++++++++++++++++++++++++++++++
-              ++++++++++++++++++++++++++++++++++++++++++++++++++
-              ++++++++++++++++++++++++++++++++++++++++++++++++++
-              ++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-              {/* footer +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-              <div style={{ width: "100%", position: "fixed", bottom: "0px", height: "60px" }} className="bg-white">
-                <Footer currnetBottomOption={currnetBottomOption} currentNottonOpt={currentNottonOpt} classes="primary"></Footer>
-              </div>
-              {/* footer +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-            </>
-            
+                    <></>
+            }
+          </div>
+          {/* body is here now  Container +++++++++++++++++++++++++++++ */}
+          {/* ++++++++++++++++++++++++++++++++++++++++++++++++++
+  ++++++++++++++++++++++++++++++++++++++++++++++++++
+  ++++++++++++++++++++++++++++++++++++++++++++++++++
+  ++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+          {/* footer +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+          <div style={{ width: "100%", position: "fixed", bottom: "0px", height: "60px" }} className="bg-white">
+            <Footer currnetBottomOption={currnetBottomOption} currentNottonOpt={currentNottonOpt} classes="primary"></Footer>
+          </div>
+          {/* footer +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+        </>
       }
     </div>
   )
