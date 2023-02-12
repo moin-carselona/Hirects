@@ -21,11 +21,14 @@ const JobNavbar = () => {
   }
   return (
     < >
+
+
+
       <div className="d-flex  p-3 example " style={{ overflow: "auto", overflowY: "hidden", scrollBehavior: 'smooth' }} >
         {
           NavJobData?.map((jobnavElement, index) => {
             return (
-              <div className={`badge text-${currentTopic == index  || currentTopic == null && index == 0 ? "primary" : "black"}  me-lg-1 mb-1 text-${currentTopic == index  || currentTopic == null && index == 0 ? "fw-bolder fs-6" : "muted"}`} key={uuid()} onClick={() => CheckCurrentTopicSelected(index)} style={{ cursor: 'pointer' }} >
+              <div className={`badge text-${currentTopic == index || currentTopic == null && index == 0 ? "primary" : "black"}  me-lg-1 mb-1 text-${currentTopic == index || currentTopic == null && index == 0 ? "fw-bolder fs-7" : "muted"}`} key={uuid()} onClick={() => CheckCurrentTopicSelected(index)} style={{ cursor: 'pointer' }} >
                 {jobnavElement}
               </div>
             )
@@ -33,10 +36,12 @@ const JobNavbar = () => {
         }
       </div>
       <div className="d-flex  p-1 w-25 d-flex align-items-center justify-content-center ">
-        <span className='p-2'><i className="bi bi-plus fs-5 text-primary" onClick={() => ToggleMenu("JobPrefernce")}></i></span>
-        <span> <i className="bi bi-search mt-2 text-primary" onClick={() => ToggleMenu("JobSearch")}></i></span>
+        <span className='p-2'><i className="bi bi-plus fs-5 " onClick={() => ToggleMenu("JobPrefernce")}></i></span>
+        <span> <i className="bi bi-search mt-2 " onClick={() => ToggleMenu("JobSearch")}></i></span>
       </div>
       <Models show={toggleModal} handleClose={closeModel} currentComponents={currentComponents}> </Models>
+
+      
     </>
   )
 }
@@ -53,10 +58,10 @@ function Models({ show, handleClose, currentComponents }) {
             {/* <h3>Assign Time Slot</h3> */}
             {
               <div className=' col-9 mt-2'>
-                {currentComponents === "JobSearch" ? <JobSearch  /> : currentComponents === "JobPrefernce" ? <JobPrefernce /> : ""}
+                {currentComponents === "JobSearch" ? <JobSearch /> : currentComponents === "JobPrefernce" ? <JobPrefernce /> : ""}
               </div>
             }
-            <button className="btn btn-primary btn-sm mt-2 col-3">Search</button>
+            {currentComponents === "JobSearch" && <button className="btn btn-secondary bg-white text-black btn-sm mt-2 col-3">Find</button>}
           </div>
         </div>
       </Modal.Body>
