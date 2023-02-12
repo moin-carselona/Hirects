@@ -39,9 +39,9 @@ const Home = () => {
       {
         internetStatus === "offline" ?
           <div className='text-center centers' >
-            <KTCardBody className='card py-4'>
+            {/* <KTCardBody className='card py-4'> */}
               <StatusOnlineOffline Title="your internet is disconneted" />
-            </KTCardBody>
+            {/* </KTCardBody> */}
           </div>
           : internetStatus === "online" ?
             < >
