@@ -1,10 +1,9 @@
 import React from 'react'
 
-const StatusOnlineOffline = ( {Title}) => {
+const StatusOnlineOffline = ( {Title, color}) => {
     return (
         <div className='d-flex align-items-center justify-content-center h-75 flex-column'>
-            <div className='spinner-border mr-15' role='status'></div>
-            <h4 className='fw-bold'>{Title}</h4>
+            <div className={`fw-bold bg-${color} text-${color === "danger" ? "white" : "black"} w-100`}>{Title}</div>
         </div>
     )
 }

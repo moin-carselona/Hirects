@@ -11,7 +11,8 @@ import ChatttedNavbar from './Components/Navbar_Footer/Navbar/ChatttedNavbar'
 import "./Home.css"
 const Home = () => {
   const [currentNottonOpt, setcurrentNottonOpt] = useState(null)
-  const [internetStatus, setinternetStatus] = useState("")
+  const [hide, sethide] = useState(false)
+  const [internetStatus, setinternetStatus] = useState("connected")
   const Botto_Option_Selected = useSelector((store) => store.FooterReducer.Botto_Option)
   const dispatch = useDispatch()
   const currnetBottomOption = (params) => {
@@ -29,17 +30,22 @@ const Home = () => {
   });
   function detectInternet() {
     if (navigator.onLine) {
-      setinternetStatus("online")
+      setinternetStatus("connected")
+    setTimeout(()=>{
+      sethide(false)
+    }, 2000)
     } else {
-      setinternetStatus("offline")
+      setinternetStatus("disconneted")
+      sethide(true)
     }
+   
   }
   return (
     <div className="d-flex flex-column">
       {
-        // <div className='text-center centers' >
-        //   <StatusOnlineOffline Title="your internet is disconneted" />
-        // </div>
+        hide && <span className={`text-center centers `} >
+          <StatusOnlineOffline Title={`your internet is  ${internetStatus}`} color={internetStatus == "connected" ? "success" : "danger"} />
+        </span>
       }
       {
         < >
